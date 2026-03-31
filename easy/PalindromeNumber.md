@@ -7,9 +7,10 @@ class Solution {
     public boolean isPalindrome(int x) {
         String temp = Integer.toString(x);
         int[] array = new int[temp.length()];
+        int num = Integer.parseInt(temp);
         // if negative
-        if (Integer.parseInt(temp) < 0){
-            temp = temp.substring(1);
+        if (num < 0){
+            num = num * (-1);
         }
         // add to array
         for (int i = 0; i < temp.length(); i++) {
@@ -20,7 +21,9 @@ class Solution {
         for (int n :array){
             res = res * 10 + n;
         }
-        if (res == Integer.parseInt(temp)){
+        System.out.println("Resultado array: " + res + " Resultado inicial: " +num );
+        if (res == num){
+            System.out.println("True");
             return true;
         }
         return false;
